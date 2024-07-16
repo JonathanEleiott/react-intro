@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+      const App = () => {
+        // const [name, setName] = React.useState('Fish');
+        const [counter, setCounterAndRerender] = React.useState(100);
+
+        // sets the counter to a new value that is passed in
+        // re-renders the page
+
+        const clickEventTriggered = () => {
+          setCounterAndRerender(counter + 1);
+        }
+
+        return (
+          <>
+            <h1>Hello {counter}</h1>
+
+            <button onClick={clickEventTriggered}>Add 1</button>
+
+          </>
+        )
+      }
+
+      const container = document.querySelector(`#app`);
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+    </script>
+
+    <script>
+      const names = [`Sally`, `Billy`, `Joe`, `Betty`];
+      // const favStudent = names[0];
+      // const bestStudent = names[1];
+      // const awesomeStudent = names[2];
+
+      const [favStudent, bestStudent, awesomeStudent] = names;
+      // console.log(awesomeStudent);
+
+
+    </script>
+  </body>
+</html>
